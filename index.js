@@ -32,7 +32,7 @@ class Stack {
       this.last = null;
     }
     this.first = this.first.next;
-    this.slze -= 1;
+    this.size -= 1;
     return node.value;
   }
 }
