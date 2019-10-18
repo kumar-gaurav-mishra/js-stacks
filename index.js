@@ -32,16 +32,22 @@ class Stack {
     if (this.size === 0) return undefined;
     let node = this.first;
     let prev = null;
-    while (node) {
-      if (node.next) {
-        prev = node;
+    if (this.size <= 1) {
+      this.first = null;
+      this.last = null;
+      this.size = 0;
+    } else {
+      while (node) {
+        if (node.next) {
+          prev = node;
+        }
+        node = node.next;
       }
-      node = node.next;
+      this.size -= 1;
+      node = prev.next;
+      this.last = prev;
+      prev.next = null;
     }
-    this.size -= 1;
-    node = prev.next;
-    this.last = prev;
-    prev.next = null;
     return node.value;
   }
 }
