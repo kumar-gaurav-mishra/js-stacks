@@ -9,12 +9,12 @@ class Stack {
   constructor() {
     this.first = null;
     this.last = null;
-    this.length = 0;
+    this.size = 0;
   }
   push(value) {
     if (!value) return undefined;
     let node = new Node(value);
-    if (this.length === 0) {
+    if (this.size === 0) {
       this.first = node;
       this.last = node;
     } else {
@@ -25,11 +25,11 @@ class Stack {
       }
       first.next = node;
     }
-    this.length += 1;
-    return this;
+    this.size += 1;
+    return this.size;
   }
   pop() {
-    if (this.length === 0) return undefined;
+    if (this.size === 0) return undefined;
     let node = this.first;
     let prev = null;
     while (node) {
@@ -38,11 +38,11 @@ class Stack {
       }
       node = node.next;
     }
-    this.length -= 1;
+    this.size -= 1;
     node = prev.next;
     this.last = prev;
     prev.next = null;
-    return node;
+    return node.value;
   }
 }
 module.exports = Stack;

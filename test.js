@@ -13,22 +13,21 @@ describe('Stack', () => {
     });
   });
   describe('Push Method', () => {
-    it('stack length should be 0 when stack is empty', () => {
+    it('stack size should be 0 when stack is empty', () => {
       let stack = new Stack();
-      stack.length.should.be.equals(0);
+      stack.size.should.be.equals(0);
       (stack.pop() === undefined).should.be.equals(true);
     });
-    it('stack length should be 1 when stack has one element', () => {
+    it('stack size should be 1 when stack has one element', () => {
       let stack = new Stack();
       stack.push(1);
-      (stack.length == 1).should.be.equals(true);
+      (stack.size == 1).should.be.equals(true);
     });
     it('stack push method should push element at the end of the stack', () => {
       let stack = new Stack();
-      stack.push(1);
-      stack.push(2);
-      stack.push(3);
-      (stack.last.value == 3).should.be.equals(true);
+      (stack.push(1) === 1).should.be.equals(true);
+      (stack.push(10) === 2).should.be.equals(true);
+      (stack.push(40) === 3).should.be.equals(true);
       (stack.push() === undefined).should.be.equals(true);
     });
   });
@@ -37,7 +36,7 @@ describe('Stack', () => {
       let stack = new Stack();
       stack.push(1);
       stack.push(2);
-      (stack.pop().value == 2).should.be.equals(true);
+      (stack.pop() == 2).should.be.equals(true);
     });
   });
 });
