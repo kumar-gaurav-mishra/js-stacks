@@ -1,6 +1,6 @@
 {
   "name": "js-stacks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Javascript Implementation of Stack",
   "main": "index.js",
   "scripts": {
@@ -14,9 +14,9 @@
   "keywords": [
     "Javascript",
     "DataStructure",
-    "DoublyLinkedList",
-    "list",
-    "js-doubly-linked-list"
+    "js-stacks",
+    "stack",
+    "js-stack"
   ],
   "author": "Kumar Gaurav Mishra",
   "license": "MIT",
