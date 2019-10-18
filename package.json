@@ -1,6 +1,6 @@
 {
   "name": "js-stacks",
-  "version": "1.0.3",
+  "version": "1.2.0",
   "description": "Javascript Implementation of Stack",
   "main": "index.js",
   "scripts": {

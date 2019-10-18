@@ -19,11 +19,8 @@ class Stack {
       this.last = node;
     } else {
       let first = this.first;
-      this.last = node;
-      while (first.next) {
-        first = first.next;
-      }
-      first.next = node;
+      this.first = node;
+      this.first.next = first;
     }
     this.size += 1;
     return this.size;
@@ -31,23 +28,11 @@ class Stack {
   pop() {
     if (this.size === 0) return undefined;
     let node = this.first;
-    let prev = null;
-    if (this.size <= 1) {
-      this.first = null;
+    if (this.first === this.last) {
       this.last = null;
-      this.size = 0;
-    } else {
-      while (node) {
-        if (node.next) {
-          prev = node;
-        }
-        node = node.next;
-      }
-      this.size -= 1;
-      node = prev.next;
-      this.last = prev;
-      prev.next = null;
     }
+    this.first = this.first.next;
+    this.slze -= 1;
     return node.value;
   }
 }

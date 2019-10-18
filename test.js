@@ -35,6 +35,8 @@ describe('Stack', () => {
     it('stack pop method should pop element from the end of the stack', () => {
       let stack = new Stack();
       stack.push(1);
+      (stack.pop() == 1).should.be.equals(true);
+      stack.push(1);
       stack.push(2);
       (stack.pop() == 2).should.be.equals(true);
     });
